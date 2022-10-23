@@ -17,6 +17,13 @@ html, body {
       font-size: 40px;
     }
 
+    button {
+      background-color: transparent;
+      width: auto;
+      height: 10px;
+      border-color: transparent;
+      text-align: center;
+    }
     
   </style>
 
@@ -55,9 +62,3 @@ textarea{
     border-radius: 25px;
 }
 
-input[type="submit"] {
-    background: url(images/shopping-cart/check-out-btn.png);
-    width: 200px; /* width of image */
-    height: 50px; /* height of image */
-    border: 0;
-}
