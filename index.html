@@ -2,53 +2,213 @@
 <html>
 
 <head>
-  <header>
-    <div class="navbar" id="navigation" >
-      <a href="index.html">Home</a>
-      <a href="returnPage.html">Videos</a>
-    </div>
-  </header>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
   <style>
-    p {
-      text-align:center
-
+    div{
+        text-align: center;
       }
-    h1 {
-      text-align:center
+    h2 {
+      text-align: center;
+      font-size: 60px;
+    }
+    body {
+      font-family: 'Trebuchet MS';
+    }
 
+    /* Full-width input fields */
+    input[type=text],
+    input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+    button {
+      background-color: #b6e6eb;
+      color: black;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      font-family: 'Trebuchet MS';
+      font-size: 50px;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+
+    /* Center the image and position the close button */
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+
+    img.avatar {
+      width: 40%;
+      border-radius: 50%;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: radial-gradient(white, #7ecbe2);
+      /* Fallback color */
+      /* Black w/ opacity */
+      padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-image: radial-gradient(white, #7ecbe2);
+      margin: 5% auto 15% auto;
+      /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 80%;
+      /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+      from {
+        -webkit-transform: scale(0)
       }
-    form {
-      text-align:center
+
+      to {
+        -webkit-transform: scale(1)
+      }
     }
-    .button{
-      
+
+    @keyframes animatezoom {
+      from {
+        transform: scale(0)
+      }a
+
+      to {
+        transform: scale(1)
+      }
     }
-    
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+        display: block;
+        float: none;
+      }
+
+      .cancelbtn {
+        width: 100%;
+      }
+    }
   </style>
-
-  <article>
-    <section>
-      <h1 style="font-family: Georgia" "font-size: 60px"> Sentence Saver</h1>
-      <p font-family: Georgia>Enter in any text and receive feedback and resources to help improve it!</p>
-    </section>
-  </article>
-  
-    <form method="POST"; action = "returnPage.html">
-    <textarea style = "resize: none; border-radius: 25px; border-color: white;font-family = 'Times New Roman'" rows="20" cols="65"name="userText" placeholder="  Enter your text here!"></textarea>
-    
-    <br>
-    <br>
-      <script src="script.js"></script>
-  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
-  <button type="submit" background-color: transparent><img src="https://i.imgur.com/vc0P4LK.png" border="0"/></button>
-
-
-</form> 
 </head>
 
+<body>
+
+  <h2>Log in to Sentence Saver</h2>
+  <div>
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+  </div>
+  
+
+  <div id="id01" class="modal">
+
+    <form class="modal-content animate" action="/action_page.php" method="post">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+          title="Close Modal">&times;</span>
+        <img src="https://i.imgur.com/ZaNSPh7.png" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        
+        <div id="button"><a href="enterPage.html">Log In</a></div>
+
+
+
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+    </form>
+  </div>
+
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
 
 </html>
